@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harold Cardona Trujillo - Academic CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #3182ce;
+            --text: #2d3748;
+            --light: #f7fafc;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .lang-switch {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+        }
+        
+        .lang-switch button {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-switch button:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0.5rem;
+        }
+        
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover { color: var(--accent); }
+        
+        section {
+            background: white;
+            margin: 1.5rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-family: 'Source Serif Pro', serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin: 1.2rem 0 0.5rem 0;
+            font-weight: 600;
+        }
+        
+        .entry {
+            margin-bottom: 1.25rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--border);
+        }
+        
+        .entry:hover { border-left-color: var(--accent); }
+        
+        .entry-date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .entry-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .entry-org {
+            color: var(--secondary);
+            font-style: italic;
+        }
+        
+        .entry-desc {
+            margin-top: 0.4rem;
+            font-size: 0.95rem;
+        }
+        
+        ul.courses {
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        ul.courses li { margin: 0.3rem 0; }
+        
+        .pub-item {
+            margin-bottom: 1rem;
+            text-align: justify;
+            font-size: 0.95rem;
+        }
+        
+        .pub-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .pub-item a:hover { text-decoration: underline; }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        .skill-item strong {
+            color: var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        
+        .contact-info a:hover { opacity: 1; text-decoration: underline; }
+        
+        .small-entry {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .container { padding: 1rem; }
+            section { padding: 1.5rem; }
+            nav ul { flex-direction: column; align-items: center; }
+        }
+        
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button onclick="toggleLang()">EN / ES</button>
+    </div>
+
+    <header>
+        <h1>Harold Cardona Trujillo</h1>
+        <p class="es">PhD en Geografía | Investigador | Docente Universitario</p>
+        <p class="en hidden">PhD in Geography | Researcher | University Professor</p>
+        <div class="contact-info">
+            <span>📍 Medellín, Colombia</span>
+            <span>🪪 C.C. 10.004.446 de Pereira</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about" class="es">Perfil</a><a href="#about" class="en hidden">Profile</a></li>
+            <li><a href="#education" class="es">Formación</a><a href="#education" class="en hidden">Education</a></li>
+            <li><a href="#complementary" class="es">F. Complementaria</a><a href="#complementary" class="en hidden">Training</a></li>
+            <li><a href="#experience" class="es">Experiencia</a><a href="#experience" class="en hidden">Experience</a></li>
+            <li><a href="#publications" class="es">Publicaciones</a><a href="#publications" class="en hidden">Publications</a></li>
+            <li><a href="#conferences" class="es">Ponencias</a><a href="#conferences" class="en hidden">Conferences</a></li>
+            <li><a href="#supervision" class="es">Dirección Tesis</a><a href="#supervision" class="en hidden">Supervision</a></li>
+            <li><a href="#awards" class="es">Becas</a><a href="#awards" class="en hidden">Awards</a></li>
+            <li><a href="#skills" class="es">Competencias</a><a href="#skills" class="en hidden">Skills</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <!-- ==================== PERFIL / PROFILE ==================== -->
+        <section id="about">
+            <h2 class="es">Perfil Profesional</h2>
+            <h2 class="en hidden">Professional Profile</h2>
+            
+            <div class="es">
+                <p>Soy profesional altamente calificado con una sólida formación académica en el campo del desarrollo rural y la geografía, respaldado por un pregrado en Administración Ambiental de la UTP, un título de Magister en Desarrollo Rural de la Pontificia Universidad Javeriana y un Doctorado en Geografía de la Universidad Complutense de Madrid. Cuento con experiencia docente y de investigación. Desde el 2007 hasta el 2018, contribuí de manera significativa como profesor e investigador en la Facultad de Ciencias Económicas de la Universidad de Antioquia. Más recientemente, desde el 2019 hasta enero de 2024, fui profesor e investigador en el Instituto de Estudios Regionales.</p>
+                <br>
+                <p>Además, he asumido roles de liderazgo como coordinador del <a href="http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001101">Grupo de Estudios Regionales</a> entre el 2012 y el 2018, y del <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/investigacion/grupos-investigacion/ciencias-sociales/recursos-estrategicos">Grupo Recursos Estratégicos, Región y Dinámicas Socioambientales</a> desde el 2021 hasta enero de 2024, editor de la revista <a href="https://revistas.udea.edu.co/index.php/iner">Documentos de trabajo INER</a> y Coordinador desde el 2019 del Comité de Ética en Investigación de Ciencias Sociales, Humanidades y Artes (CEI-CSHA) de la UdeA. Desde febrero de 2024 soy Investigador en la <a href="https://www.eafit.edu.co/escuelas/economiayfinanzas/valorpublico/Paginas/lineaterritorios.aspx">Línea de Territorio</a> del Centro de Valor Público adscrito a la Escuela de Finanzas, Economía y Gobierno de la Universidad EAFIT.</p>
+                <br>
+                <p>Cuento con amplia experiencia en investigación, la que abarca una amplia gama de temas de relevancia socioambiental, como desarrollo rural, análisis institucional, economía regional, competitividad, vivienda de interés social, género, minería y medio ambiente. Mis contribuciones a la comunidad académica se han materializado en publicaciones en revistas indexadas y en libros y capítulos de libro.</p>
+                <br>
+                <p>Además del trabajo académico, he extendido mi experiencia como consultor en organizaciones internacionales de prestigio, como el Banco Mundial, CAF, USAID, BID y UNICEF, y organizaciones nacionales como el Ministerio de Minas y Energía, Ministerio de Agricultura y Desarrollo Rural, IGAC, Gobernación de Antioquia, Alcaldía de Medellín y EPM, donde he aportado mi experiencia en temas relacionados con el desarrollo rural, territorial y local, análisis institucional, economía regional, competitividad, género, minería y medio ambiente.</p>
+            </div>
+            
+            <div class="en hidden">
+                <p>I am a highly qualified professional with solid academic training in the field of rural development and geography, supported by an undergraduate degree in Environmental Management from UTP, a Master's degree in Rural Development from Pontificia Universidad Javeriana, and a PhD in Geography from Complutense University of Madrid. I have teaching and research experience. From 2007 to 2018, I contributed significantly as a professor and researcher at the Faculty of Economic Sciences at Universidad de Antioquia. More recently, from 2019 to January 2024, I was a professor and researcher at the Institute of Regional Studies.</p>
+                <br>
+                <p>Additionally, I have assumed leadership roles as coordinator of the <a href="http://scienti.colciencias.gov.co:8085/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001101">Regional Studies Group</a> between 2012 and 2018, and the <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/investigacion/grupos-investigacion/ciencias-sociales/recursos-estrategicos">Strategic Resources, Region and Socio-environmental Dynamics Group</a> from 2021 to January 2024, editor of the journal <a href="https://revistas.udea.edu.co/index.php/iner">INER Working Papers</a> and Coordinator since 2019 of the Research Ethics Committee for Social Sciences, Humanities and Arts (CEI-CSHA) at UdeA. Since February 2024, I am a Researcher in the <a href="https://www.eafit.edu.co/escuelas/economiayfinanzas/valorpublico/Paginas/lineaterritorios.aspx">Territory Line</a> of the Center for Public Value attached to the School of Finance, Economics and Government at EAFIT University.</p>
+                <br>
+                <p>I have extensive research experience covering a wide range of socio-environmental topics, such as rural development, institutional analysis, regional economics, competitiveness, social housing, gender, mining, and environment. My contributions to the academic community have materialized in publications in indexed journals and in books and book chapters.</p>
+                <br>
+                <p>In addition to academic work, I have extended my experience as a consultant in prestigious international organizations such as the World Bank, CAF, USAID, IDB, and UNICEF, and national organizations such as the Ministry of Mines and Energy, Ministry of Agriculture and Rural Development, IGAC, Government of Antioquia, Mayor's Office of Medellín, and EPM, where I have contributed my expertise in topics related to rural, territorial and local development, institutional analysis, regional economics, competitiveness, gender, mining and environment.</p>
+            </div>
+        </section>
+
+        <!-- ==================== FORMACIÓN ACADÉMICA / EDUCATION ==================== -->
+        <section id="education">
+            <h2 class="es">Formación Académica</h2>
+            <h2 class="en hidden">Academic Education</h2>
+            
+            <div class="entry">
+                <span class="entry-date">2023</span>
+                <div class="entry-title">PhD <span class="es">en Geografía</span><span class="en hidden">in Geography</span></div>
+                <div class="entry-org">Universidad Complutense de Madrid, España</div>
+                <div class="entry-desc es">Tesis: «Innovaciones institucionales y gobernanza para la competitividad de los pequeños agricultores en Colombia». Fecha: 23.05.2023</div>
+                <div class="entry-desc en hidden">Thesis: "Institutional innovations and governance for the competitiveness of small farmers in Colombia". Date: 23.05.2023</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2011</span>
+                <div class="entry-title">Magíster <span class="es">en Desarrollo Rural</span><span class="en hidden">in Rural Development</span></div>
+                <div class="entry-org es">Facultad de Estudios Ambientales y Rurales, Pontificia Universidad Javeriana, Colombia</div>
+                <div class="entry-org en hidden">Faculty of Environmental and Rural Studies, Pontificia Universidad Javeriana, Colombia</div>
+                <div class="entry-desc es">Trabajo de grado: «Gestión de los servicios ecosistémicos que presta la flora de los agroecosistemas de la cuenca del río La Vieja, Eje Cafetero, Colombia». <a href="http://repository.javeriana.edu.co/handle/10554/1094">Enlace</a>. Fecha: 08.04.2011</div>
+                <div class="entry-desc en hidden">Thesis: "Management of ecosystem services provided by the flora of agroecosystems in the La Vieja river basin, Coffee Region, Colombia". <a href="http://repository.javeriana.edu.co/handle/10554/1094">Link</a>. Date: 08.04.2011</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2004</span>
+                <div class="entry-title es">Administrador del Medio Ambiente</div>
+                <div class="entry-title en hidden">Environmental Management Degree</div>
+                <div class="entry-org es">Facultad de Ciencias Ambientales, Universidad Tecnológica de Pereira, Colombia</div>
+                <div class="entry-org en hidden">Faculty of Environmental Sciences, Universidad Tecnológica de Pereira, Colombia</div>
+                <div class="entry-desc es">Trabajo de grado: «Estrategias de manejo para promover la regeneración natural de árboles maderables en pastizales en la cuenca del rio La Vieja – Colombia». Fecha: 12.03.2004</div>
+                <div class="entry-desc en hidden">Thesis: "Management strategies to promote natural regeneration of timber trees in pastures in the La Vieja river basin - Colombia". Date: 12.03.2004</div>
+            </div>
+        </section>
+
+        <!-- ==================== FORMACIÓN COMPLEMENTARIA / COMPLEMENTARY TRAINING ==================== -->
+        <section id="complementary">
+            <h2 class="es">Formación Complementaria</h2>
+            <h2 class="en hidden">Complementary Training</h2>
+            
+            <div class="small-entry">
+                <span class="entry-date">2021</span> XI Seminario virtual de e-learning avanzado. Estrategias educativas. Universidad Católica "Santa Teresa de Jesús de Ávila". 10 horas.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2021</span> XXXVI Seminario virtual de e-learning para profesores universitarios. Universidad Católica "Santa Teresa de Jesús de Ávila". 7 horas.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2021</span> Responsible Conduct of Research (RCR). Collaborative Institutional Training Initiative - CITI program. <a href="http://www.citiprogram.org/verify/?wda63a049-debf-4604-8610-19bd9e7437ef-34965597">Certificado</a>
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2018</span> Bioeconomía - 1er taller internacional multidisciplinario. Universidad EAFIT. 16 horas.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2017</span> Seminario: diversidad metodológica en la producción de conocimiento. Instituto de Estudios Regionales, Universidad de Antioquia. 16 horas.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2016</span> Gestión de Proyectos de Desarrollo. Banco Interamericano de Desarrollo (BID). 30 horas.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2011</span> Formación de Gestores en Emprendimiento «Construcción creativa para Orientar Emprendedores». Vicerrectoría de Docencia, Universidad de Antioquia. 36 horas.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2010</span> Capacity Building International, Programa regional "Adaptación de la agricultura y del aprovechamiento de aguas de la agricultura al cambio climático en los Andes". InWent y GTZ. Lima, Perú.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2009</span> IV Congreso Iberoamericano sobre Desarrollo y Ambiente – CISDA IV. Pontificia Universidad Javeriana, Universidad del Valle, Universidad Nacional de Colombia. Bogotá D.C.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2009</span> Curso avanzado de Economía Ecológica. La economía ecológica como propuesta analítica a la crisis ambiental. Pontificia Universidad Javeriana, Universidad del Valle, Universidad Nacional de Colombia. Bogotá D.C.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2008</span> Sixth Biannual Short Course, «Natural Resource economics: Applications of computational economics to solve dynamic problems». Professor Jorge Maldonado, CEDE, Universidad de los Andes. Medellín.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2005</span> Curso Economía Ambiental. CIEBREG, Universidad Tecnológica de Pereira.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2004</span> Curso sistema de información geográfico. Facultad de Ciencias Ambientales, Universidad Tecnológica de Pereira.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2004</span> Seminario Ganadería sostenible avances ambientales y socioeconómicos. CIPAV. Armenia.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2003</span> VI Seminario internacional del medio ambiente y desarrollo sostenible. "Ambiente y hábitat: entornos de la calidad de vida". Universidad Industrial de Santander. Bogotá D.C.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2003</span> Seminario internacional sobre presupuesto participativo. GTZ, USAID, DNP. Pereira.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2003</span> 2º Encuentro regional de investigación en biodiversidad y conservación para Antioquia y el Eje Cafetero. Pereira.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">1997-1998</span> Auxiliar de comercio exterior. Servicio Nacional de Aprendizaje (SENA).
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCIA PROFESIONAL / PROFESSIONAL EXPERIENCE ==================== -->
+        <section id="experience">
+            <h2 class="es">Experiencia Profesional</h2>
+            <h2 class="en hidden">Professional Experience</h2>
+            
+            <!-- POSICIONES ACADÉMICAS ACTUALES -->
+            <h3 class="es">Posiciones Académicas</h3>
+            <h3 class="en hidden">Academic Positions</h3>
+            
+            <div class="entry">
+                <span class="entry-date">2023 - <span class="es">Actual</span><span class="en hidden">Present</span></span>
+                <div class="entry-title es">Docente – Investigador</div>
+                <div class="entry-title en hidden">Professor – Researcher</div>
+                <div class="entry-org es">Escuela de Finanzas, Economía y Gobierno, Universidad EAFIT</div>
+                <div class="entry-org en hidden">School of Finance, Economics and Government, EAFIT University</div>
+                <div class="entry-desc es">Curso posgrados: Gobernanza de las organizaciones sociales (OG1092). Maestría en Gerencia de empresas sociales para la innovación social y el desarrollo local. EAFIT Social. 2023 I – II y 2024 I.</div>
+                <div class="entry-desc en hidden">Graduate course: Governance of social organizations (OG1092). Master's in Management of social enterprises for social innovation and local development. EAFIT Social. 2023 I – II and 2024 I.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2019 - 2024</span>
+                <div class="entry-title es">Docente – Investigador</div>
+                <div class="entry-title en hidden">Professor – Researcher</div>
+                <div class="entry-org">Instituto de Estudios Regionales, Universidad de Antioquia</div>
+                <div class="entry-desc es">
+                    <strong>Cursos pregrado:</strong> Análisis Económico Regional, Desarrollo Territorial.<br>
+                    <strong>Cursos posgrado:</strong> Seminario De Investigación III: Análisis Socioespacial (1601008), Maestría Estudio Socio Espaciales. Trabajo de Investigación I, Maestría Estudio Socioespaciales.<br>
+                    <strong>Cargos administrativos:</strong> Coordinador del Comité de ética del área de Ciencias Humanas y Artes, CEI-CSHA (2019-2024).
+                </div>
+                <div class="entry-desc en hidden">
+                    <strong>Undergraduate courses:</strong> Regional Economic Analysis, Territorial Development.<br>
+                    <strong>Graduate courses:</strong> Research Seminar III: Socio-spatial Analysis (1601008), Master's in Socio-Spatial Studies. Research Work I, Master's in Socio-spatial Studies.<br>
+                    <strong>Administrative positions:</strong> Coordinator of the Ethics Committee for Humanities and Arts, CEI-CSHA (2019-2024).
+                </div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2007 - 2020</span>
+                <div class="entry-title es">Docente</div>
+                <div class="entry-title en hidden">Professor</div>
+                <div class="entry-org es">Facultad de Ciencias Económicas, Universidad de Antioquia</div>
+                <div class="entry-org en hidden">Faculty of Economic Sciences, Universidad de Antioquia</div>
+                <div class="entry-desc es">
+                    <strong>Cursos pregrado:</strong> Análisis Económico Regional, Desarrollo Territorial; Reportes de Sostenibilidad; Monografía de Grado; Fuentes y técnicas de investigación; Gestión Ambiental Empresarial; Técnicas y Fuentes de la Investigación.<br>
+                    <strong>Cursos posgrado:</strong> Seminario De Investigación III: Análisis Socioespacial, Maestría Estudio Socio Espaciales; Trabajo de Investigación I, Maestría Estudio Socio Espaciales; Seminario Profundización, Maestría en Agronegocios; Seminario Profundización, Maestría en Administración de Empresas; Seminario de Monografía, Especialización en Evaluación Socioeconómica de proyectos y Especialización en Responsabilidad Social Empresarial; Seminario Gestión Ambiental, Especialización en Responsabilidad Social Empresarial.
+                </div>
+                <div class="entry-desc en hidden">
+                    <strong>Undergraduate courses:</strong> Regional Economic Analysis, Territorial Development; Sustainability Reports; Thesis; Research Sources and Techniques; Corporate Environmental Management.<br>
+                    <strong>Graduate courses:</strong> Research Seminar III: Socio-spatial Analysis, Master's in Socio-Spatial Studies; Research Work I; Deepening Seminar, Master's in Agribusiness and Master's in Business Administration; Monograph Seminar, Specialization in Socioeconomic Project Evaluation and CSR; Environmental Management Seminar.
+                </div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2004 - 2007</span>
+                <div class="entry-title">Instructor</div>
+                <div class="entry-org">Centro de Comercio y servicios SENA regional Risaralda</div>
+                <div class="entry-desc es">Cursos: Ética, Liderazgo, Transformación del Entorno, Dimensión Ambiental y Emprendimiento</div>
+                <div class="entry-desc en hidden">Courses: Ethics, Leadership, Environment Transformation, Environmental Dimension and Entrepreneurship</div>
+            </div>
+            
+            <!-- PROYECTOS DE INVESTIGACIÓN -->
+            <h3 class="es">Proyectos de Investigación</h3>
+            <h3 class="en hidden">Research Projects</h3>
+            
+            <div class="entry">
+                <span class="entry-date">2025</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Promover cambios de comportamiento para la reducción del impacto ambiental de la minería artesanal y en pequeña escala (MAPE) en las comunidades donde la actividad Tierra Dorada tiene intervención. Subcontract No. TDA-25-SUB-006. Universidad EAFIT. 8 meses.</div>
+                <div class="entry-desc en hidden">Promote behavioral changes to reduce environmental impact of artisanal and small-scale mining (ASM) in communities where Tierra Dorada operates. Subcontract No. TDA-25-SUB-006. EAFIT University. 8 months.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2024 - 2026</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Un Café para la Sostenibilidad y la Productividad: comunidades inteligentes para la adaptación y mitigación al cambio climático y la regeneración de los paisajes cafeteros. Financiado por AL-INVEST Verde - Componente 1. Contrato: 922-AIV-1/2023-056. Universidad EAFIT, código: 826700. 2 años.</div>
+                <div class="entry-desc en hidden">A Coffee for Sustainability and Productivity: smart communities for climate change adaptation and mitigation and coffee landscape regeneration. Funded by AL-INVEST Verde - Component 1. Contract: 922-AIV-1/2023-056. EAFIT University. 2 years.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2024</span>
+                <div class="entry-title es">Coinvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Análisis de la productividad agrícola para mejorar el desarrollo económico sostenible con el Banco Mundial Paraguay. Contrato: CI18364.</div>
+                <div class="entry-desc en hidden">Analysis of agricultural productivity to improve sustainable economic development with World Bank Paraguay. Contract: CI18364.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2024</span>
+                <div class="entry-title es">CoInvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Diseño del mecanismo de monitoreo analítico del sistema de Abastecimiento Agroalimentario de Antioquia. Contratado por FAO. Contrato: CI18362.</div>
+                <div class="entry-desc en hidden">Design of the analytical monitoring mechanism for the Antioquia Agri-food Supply System. Contracted by FAO. Contract: CI18362.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2023 - 2024</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Innovación social para el sostenimiento de comunidades rurales: Superando Desafíos Institucionales del Bajo Cauca y el Oriente del departamento de Antioquia, Colombia. Universidad de Antioquia.</div>
+                <div class="entry-desc en hidden">Social innovation for rural community sustainability: Overcoming Institutional Challenges in Bajo Cauca and Eastern Antioquia, Colombia. Universidad de Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2023</span>
+                <div class="entry-title es">Consultor Principal</div>
+                <div class="entry-title en hidden">Lead Consultant</div>
+                <div class="entry-desc es">Evaluación de los resultados finales del proyecto "Turismo de naturaleza como apoyo a la lucha contra la deforestación". SWISSCONTACT. Contrato No. 031 de 2023.</div>
+                <div class="entry-desc en hidden">Evaluation of final results of "Nature tourism as support for the fight against deforestation" project. SWISSCONTACT. Contract No. 031/2023.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2022 - 2023</span>
+                <div class="entry-title es">Coinvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Evaluación económico-ambiental de alternativas de aprovechamiento de recursos renovables regionales para la generación de energía eléctrica (P15), alianza <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/investigacion/seneca">SENECA</a>. Facultad de Ingeniería, Universidad de Antioquia.</div>
+                <div class="entry-desc en hidden">Economic-environmental evaluation of alternatives for regional renewable resources for electricity generation (P15), <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/investigacion/seneca">SENECA</a> alliance. Faculty of Engineering, Universidad de Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2022</span>
+                <div class="entry-title es">Coinvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Evaluación intermedia del fondo multi-donante Colombia sostenible (facilidad Colombia sostenible). EAFIT y BID.</div>
+                <div class="entry-desc en hidden">Mid-term evaluation of the Sustainable Colombia multi-donor fund. EAFIT and IDB.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2022 - 2023</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Diplomado en liderazgo comunitario para el desarrollo territorial dictado a líderes comunitarios de Briceño, Toledo, San Andrés de Cuerquia, Yarumal, Santa Fe de Antioquia, Buriticá, Olaya, Liborina, Sabanalarga y Peque. Fundación EPM - Universidad de Antioquia. Proyecto Ambiente para la Vida. «2020-1156».</div>
+                <div class="entry-desc en hidden">Diploma in community leadership for territorial development for community leaders from Briceño, Toledo, San Andrés de Cuerquia, Yarumal, Santa Fe de Antioquia, Buriticá, Olaya, Liborina, Sabanalarga and Peque. EPM Foundation - Universidad de Antioquia. Environment for Life Project. «2020-1156».</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2021</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Diplomado en liderazgo comunitario para el desarrollo territorial en Ituango, Valdivia, Tarazá, Cáceres, Caucasia y Nechí. Fundación EPM - Universidad de Antioquia. Proyecto Ambiente para la Vida. «2020-1140».</div>
+                <div class="entry-desc en hidden">Diploma in community leadership for territorial development in Ituango, Valdivia, Tarazá, Cáceres, Caucasia and Nechí. EPM Foundation - Universidad de Antioquia. Environment for Life Project. «2020-1140».</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2021</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Acompañamiento y veeduría mediante metodología de auditoría en caracterización socioeconómica y avalúos del mercado inmobiliario de la comunidad Mina el Alacrán, Puerto Libertador, Córdoba. Minerales Córdoba - Universidad de Antioquia.</div>
+                <div class="entry-desc en hidden">Accompaniment and oversight through audit methodology in socioeconomic characterization and real estate appraisals for Mina el Alacrán community, Puerto Libertador, Córdoba. Minerales Córdoba - Universidad de Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2020</span>
+                <div class="entry-title es">CoInvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Diseño del modelo de participación y fortalecimiento de actores en la planificación del patrimonio hídrico, transversalizado por el enfoque diferencial. Corantioquia - Universidad de Antioquia. «040-COV2009-113».</div>
+                <div class="entry-desc en hidden">Design of participation model and strengthening of actors in water heritage planning, mainstreamed by differential approach. Corantioquia - Universidad de Antioquia. «040-COV2009-113».</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2020</span>
+                <div class="entry-title es">Coinvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Línea estratégica 5 «Gobernanza y Gobernabilidad: Medellín con inteligencia territorial para la participación ciudadana y la construcción de paz». Plan de Desarrollo de Medellín.</div>
+                <div class="entry-desc en hidden">Strategic line 5 "Governance and Governability: Medellín with territorial intelligence for citizen participation and peace building". Medellín Development Plan.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2020</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Apoyo para la elaboración del plan de desarrollo Municipal de Caracolí - Antioquia de manera concertada entre la comunidad y la administración local. «CI-001-2020».</div>
+                <div class="entry-desc en hidden">Support for the elaboration of the Municipal Development Plan of Caracolí - Antioquia in coordination between the community and local administration. «CI-001-2020».</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2019 - 2022</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Construcción de espacialidades e identidades de inclusión en un ambiente de vulnerabilidad en Medellín: Una propuesta intersectorial para la promoción de la salud y el bienestar a través de la gestión de la vivienda de interés Social (VIS) y vivienda de interés prioritario. «CT 182-2019» Convocatoria 808 - COLCIENCIAS.</div>
+                <div class="entry-desc en hidden">Construction of spatialities and identities of inclusion in a vulnerability environment in Medellín: An intersectoral proposal for health and wellbeing promotion through social housing management (VIS) and priority housing. «CT 182-2019» Call 808 - COLCIENCIAS.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2019</span>
+                <div class="entry-title es">Gerente</div>
+                <div class="entry-title en hidden">Manager</div>
+                <div class="entry-desc es">Sistema Experto de Información y Comunicación del Centro de Desarrollo Agro-biotecnológico de Innovación e Integración Territorial – CEDAIT – UdeA.</div>
+                <div class="entry-desc en hidden">Expert Information and Communication System of the Agro-biotechnological Development Center for Innovation and Territorial Integration - CEDAIT - UdeA.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2019</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Apoyo a la estrategia de territorialización Plan Nacional de Desarrollo 2018-2022: identificación de principales restricciones operativas al crecimiento en Antioquia, Caldas, Risaralda y Quindío. CAF - Universidad de Antioquia.</div>
+                <div class="entry-desc en hidden">Support for the territorialization strategy of the National Development Plan 2018-2022: identification of main operational restrictions to growth in Antioquia, Caldas, Risaralda and Quindío. CAF - Universidad de Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2017 - 2018</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Valoración de la actividad sectorial de la minería artesanal y en pequeña escala (MAPE) para EITI y contexto económico del sector minero. Ministerio de Minas y Energía - Universidad de Antioquia. Contrato 494 de 2017.</div>
+                <div class="entry-desc en hidden">Valuation of artisanal and small-scale mining (ASM) sector activity for EITI and economic context of mining sector. Ministry of Mines and Energy - Universidad de Antioquia. Contract 494/2017.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2016 - 2017</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Primera fase del diseño de un modelo de autonomía económica para las mujeres del municipio de Medellín. Secretaría de las Mujeres - Universidad de Antioquia. Contrato 4600067324 de 2016.</div>
+                <div class="entry-desc en hidden">First phase of designing an economic autonomy model for women in Medellín. Secretary for Women - Universidad de Antioquia. Contract 4600067324/2016.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2015</span>
+                <div class="entry-title es">Coordinación diplomado</div>
+                <div class="entry-title en hidden">Diploma Coordination</div>
+                <div class="entry-desc es">Diplomatura en direccionamiento y gerenciamiento en la gestión ambiental empresarial. Universidad de Antioquia - ANDI. Convenio 21502407-07-2015.</div>
+                <div class="entry-desc en hidden">Diploma in direction and management in corporate environmental management. Universidad de Antioquia - ANDI. Agreement 21502407-07-2015.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2013 - 2014</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Recursos y capacidades para el desarrollo económico y competitividad y lineamientos de políticas públicas regionales para Urabá. CODI - Universidad de Antioquia.</div>
+                <div class="entry-desc en hidden">Resources and capabilities for economic development and competitiveness and regional public policy guidelines for Urabá. CODI - Universidad de Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2012 - 2013</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Evaluación del impacto ambiental de la explotación carbonífera en la cuenca del Sinifaná, a partir del análisis de ciclo de vida. CODI - Universidad de Antioquia.</div>
+                <div class="entry-desc en hidden">Environmental impact assessment of coal mining in the Sinifaná basin using life cycle analysis. CODI - Universidad de Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2011 - 2014</span>
+                <div class="entry-title es">Coordinación diplomado y cursos</div>
+                <div class="entry-title en hidden">Diploma and Course Coordination</div>
+                <div class="entry-desc es">Sistemas de Gestión Ambiental Empresarial, Seminario en Gerencia Ambiental y Análisis y Valoración de Costos Ambientales.</div>
+                <div class="entry-desc en hidden">Corporate Environmental Management Systems, Environmental Management Seminar and Environmental Cost Analysis and Valuation.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2009 - 2010</span>
+                <div class="entry-title es">Asesor</div>
+                <div class="entry-title en hidden">Advisor</div>
+                <div class="entry-desc es">Fortalecimiento socioeconómico para poblaciones de las regiones Norte y Occidente de Antioquia. Secretaria de Equidad de Género, Gobernación de Antioquia. Programa AM BBI (Antioquia-Medellín, Bizkaia-Bilbao).</div>
+                <div class="entry-desc en hidden">Socioeconomic strengthening for populations in North and West Antioquia. Gender Equity Secretary, Government of Antioquia. AM BBI Program.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2009 - 2010</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Desarrollo local y género desde la perspectiva de sistemas productivos y territoriales y ambientales en dos municipios del área de influencia del proyecto Pescadero, Ituango. Programa AMBBI.</div>
+                <div class="entry-desc en hidden">Local development and gender from the perspective of productive, territorial and environmental systems in two municipalities in the Pescadero Ituango project area. AMBBI Program.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2009 - 2010</span>
+                <div class="entry-title es">Coinvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Agenda prospectiva de investigación y desarrollo tecnológico en la cadena productiva de la trucha en Antioquia a partir de sistemas de inteligencia tecnológica. Ministerio de Agricultura y Desarrollo Rural.</div>
+                <div class="entry-desc en hidden">Prospective research and technological development agenda in the trout production chain in Antioquia using technological intelligence systems. Ministry of Agriculture and Rural Development.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2009 - 2010</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Recursos económicos y sistemas productivos territoriales para el desarrollo de Antioquia. Programa Expedición Antioquia 2013. Gobernación de Antioquia - Universidad de Antioquia.</div>
+                <div class="entry-desc en hidden">Economic resources and territorial productive systems for Antioquia development. Expedition Antioquia 2013 Program. Government of Antioquia - Universidad de Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2009</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Capítulo Antioquia para "Gran Atlas de la distribución de la propiedad Rural en Colombia". IGAC, Universidad de los Andes. Financiado por Gobernación de Antioquia.</div>
+                <div class="entry-desc en hidden">Antioquia Chapter for "Grand Atlas of Rural Property Distribution in Colombia". IGAC, Universidad de los Andes. Funded by Government of Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2008 - 2010</span>
+                <div class="entry-title es">Coinvestigador</div>
+                <div class="entry-title en hidden">Co-Investigator</div>
+                <div class="entry-desc es">Seguimiento a la actividad ocupacional de los egresados del programa de Administración de Empresas, Universidad de Antioquia. BUPPE.</div>
+                <div class="entry-desc en hidden">Monitoring occupational activity of Business Administration graduates, Universidad de Antioquia. BUPPE.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2008</span>
+                <div class="entry-title es">Investigador Principal</div>
+                <div class="entry-title en hidden">Principal Investigator</div>
+                <div class="entry-desc es">Valoración económica de los impactos ambientales asociados a la cantera ubicada en vereda Guayabito, municipio de Rionegro, Antioquia. DAMA - Gobernación de Antioquia.</div>
+                <div class="entry-desc en hidden">Economic valuation of environmental impacts associated with the quarry in Guayabito, Rionegro, Antioquia. DAMA - Government of Antioquia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2006 - 2007</span>
+                <div class="entry-title es">Consultor Asociado</div>
+                <div class="entry-title en hidden">Associate Consultant</div>
+                <div class="entry-desc es">Bienes y servicios ambientales ofrecidos por los agroecosistemas de la cuenca del río La Vieja, Eje Cafetero colombiano. CIEBREG - Proyecto CEAN.</div>
+                <div class="entry-desc en hidden">Environmental goods and services offered by agroecosystems in the La Vieja river basin, Colombian Coffee Region. CIEBREG - CEAN Project.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2005 - 2007</span>
+                <div class="entry-title es">Investigador Asociado</div>
+                <div class="entry-title en hidden">Associate Researcher</div>
+                <div class="entry-desc">Centro de Investigación en biodiversidad y recursos genéticos – CIEBREG.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2005 - 2006</span>
+                <div class="entry-title es">Consultor Asociado</div>
+                <div class="entry-title en hidden">Associate Consultant</div>
+                <div class="entry-desc es">Identificar y promover el uso de bienes de la biodiversidad para solucionar problemas de productividad y funcionalidad de paisajes naturales y sistemas de producción en el corregimiento de la Bella, Risaralda. CIEBREG.</div>
+                <div class="entry-desc en hidden">Identify and promote use of biodiversity goods to solve productivity and functionality problems in natural landscapes and production systems in La Bella, Risaralda. CIEBREG.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2005</span>
+                <div class="entry-title es">Consultor Asociado</div>
+                <div class="entry-title en hidden">Associate Consultant</div>
+                <div class="entry-desc es">Identificación de especies nativas con usos específicos por parte de las comunidades en sistemas productivos de la cuenca del río La Vieja, Eje Cafetero Colombia. CIEBREG.</div>
+                <div class="entry-desc en hidden">Identification of native species with specific uses by communities in productive systems in the La Vieja river basin, Colombian Coffee Region. CIEBREG.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2003</span>
+                <div class="entry-title es">Coordinador de Cadenas Productivas</div>
+                <div class="entry-title en hidden">Production Chains Coordinator</div>
+                <div class="entry-desc">CARDER - UTP.</div>
+            </div>
+        </section>
+
+        <!-- ==================== PUBLICACIONES / PUBLICATIONS ==================== -->
+        <section id="publications">
+            <h2 class="es">Publicaciones</h2>
+            <h2 class="en hidden">Publications</h2>
+            
+            <!-- LIBROS -->
+            <h3 class="es">Libros y Capítulos de Libro</h3>
+            <h3 class="en hidden">Books and Book Chapters</h3>
+            
+            <div class="pub-item">
+                <strong>Cardona-Trujillo, H.</strong>, Quintero-Vásquez, L. M., y Muñoz-Mora, J. C. (2024). Sistema de Abastecimiento Agroalimentario de Antioquia. En S. N. Leyva-Hernández & L. Ramos-López (Coords.), <em>Desarrollo Agroalimentario</em> (pp. 149-189). Universidad Tecnocientífica del Pacífico S.C. <a href="https://doi.org/10.58299/utp.235">DOI</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Harold Cardona Trujillo</strong> y Eliana Martínez Herrera (2021). Crisis climáticas y pandemias. En: <em>Memorias 2021: XII Congreso Internacional de Salud Pública</em>. ISBN 978-628-7592-67-4. p. 56-70. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/35807">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                IGAC, UNIANDES (2012). Capítulo Antioquia, Para el <em>Atlas de La Distribución de La Propiedad Rural Colombia</em>. Bogotá: Imprenta Nacional de Colombia. ISBN 7703476003287. <a href="https://tiendavirtual.igac.gov.co/es/content/atlas-de-la-distribuci%C3%B3n-de-la-propiedad-rural-en-colombia-en-libro-incluye-cd">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Ministerio De Agricultura y Desarrollo Rural (2010). <em>Agenda prospectiva de investigación y desarrollo tecnológico para la cadena productiva de la trucha arcoíris en Antioquia</em>. ISBN: 978-958-8536-22-4. <a href="https://repository.agrosavia.co/handle/20.500.12324/12693">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Juan Carlos Camargo García, <strong>Harold Cardona Trujillo</strong> y Jhony Gaviria Vásquez (2008). Capítulo 6. Regeneración Natural de Árboles Maderables en Pasturas. En <em>Ganadería del futuro</em>. Fundación CIPAV. ISBN: 978-958-9386-55-2. <a href="http://www.cipav.org.co/pdf/noticias/PaginasSSPCIPAV.pdf">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Ligia María Arias Giraldo, Juan Carlos Camargo García y <strong>Harold Cardona-Trujillo</strong> (2008). Capítulo 11. Carbono Orgánico Edáfico en Rodales de Guadua. En <em>Ganadería del futuro</em>. Fundación CIPAV. ISBN: 978-958-9386-55-2.
+            </div>
+            
+            <!-- ARTÍCULOS -->
+            <h3 class="es">Artículos en Revistas Indexadas</h3>
+            <h3 class="en hidden">Journal Articles</h3>
+            
+            <div class="pub-item">
+                Isaza-Ruiz, M., Restrepo-Posada, M., <strong>Cardona-Trujilo, H.</strong>, & Gómez-Botero, M. A. (2025). Cementos híbridos a partir de relaves mineros. <em>Revista Facultad De Ingeniería UdeA</em>. <a href="https://doi.org/10.17533/udea.redin.20250673">DOI</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Harold Cardona-Trujillo</strong>, Estefany Peña-Rojas, Eliana Martínez-Herrera & María Claudia Mejía-Gil (2022). Life conditions of residents in social housing in Medellín, Colombia: a Fuzzy Analytical Hierarchy Process. <em>Cities & Health</em>, Q2. 7(1), 112-121. <a href="https://doi.org/10.1080/23748834.2022.2122264">DOI</a>
+            </div>
+            
+            <div class="pub-item">
+                Santana Rivas, L. D., Ortiz Núñez, S., & <strong>Cardona Trujillo, H.</strong> (2021). ¿Y la producción capitalista de vivienda en Medellín (2009-2017)? <em>Revista INVI</em> Q1, 36(103), 235-267. <a href="https://doi.org/10.4067/S0718-83582021000300235">DOI</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona-Trujillo, H.</strong>, Carmona-García, U., & Restrepo-Tarquino, I. (2017). Gestión ambiental, sostenibilidad y competitividad minera. <em>Dyna</em>, Q3. 84(201), 50-58. <a href="https://doi.org/10.15446/dyna.v84n201.60326">DOI</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona, H. T.</strong>, & García, U. F. C. (2017). Análisis del ciclo de vida de la explotación de carbón en la cuenca del Sinifaná, Antioquia. <em>Producción + Limpia</em> (A1), 12(1), 33-40. <a href="https://doi.org/10.22507/pml.v12n1a3">DOI</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona, H. T.</strong>, & Cataño, J. P. (2017). Analysis of risk management in the purchase of coal, natural gas and Petcoke: case of three cement plants in South America. <em>Ciencias Estratégicas</em>. 25(37), 53-70. <a href="https://repository.upb.edu.co/handle/20.500.11912/7999">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona, H. T.</strong>, & Chica, V. C. (2016). Minería responsable: Mecanismos e incentivos en el caso del carbón en Colombia. <em>Economía & Región</em>, 10(2), 125-148. <a href="https://revistas.utb.edu.co/index.php/economiayregion/article/download/129/112">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Muñoz, M. J, <strong>Cardona, T. H.</strong> (2013). El precio de la tierra: estado del arte de las metodologías de valoración de predios rurales y su aplicación en Colombia. <em>Revista Suma de Negocios</em>. 4(1), 21-31. <a href="http://publicaciones.konradlorenz.edu.co/index.php/SumaDeNegocios/article/view/1500">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona, T. H</strong>; Londoño, Y. C. (2011). Estado del arte de los recursos para el desarrollo en Antioquia. <em>Revistas Ciencias Estratégicas</em>. 19(25), 35-54. <a href="https://revistas.upb.edu.co/index.php/cienciasestrategicas/article/view/1102">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Camargo J C, Feijoo A, Zúñiga M C, <strong>Cardona T, Harold</strong> and Gaviria J. (2005). Silvopastoral systems with isolated timber trees within pastures in the Coffee region of Colombia. <em>Livestock Research for Rural Development</em>. 17(5). <a href="http://www.lrrd.org/lrrd17/5/cama17051.htm">Enlace</a>
+            </div>
+            
+            <!-- BORRADORES DE TRABAJO -->
+            <h3 class="es">Borradores de Trabajo</h3>
+            <h3 class="en hidden">Working Papers</h3>
+            
+            <div class="pub-item">
+                <strong>Cardona-Trujillo, H.</strong>, Peña-Rojas, E. (2020). Identificación de las principales restricciones operativas al crecimiento en Antioquia, Caldas, Risaralda y Quindío, Colombia. <em>Borradores Departamento de Economía</em>, (88), 1-39. <a href="http://bibliotecadigital.udea.edu.co/handle/10495/18185">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona Trujillo, H.</strong>, et al. (2017). Local economic development and gender in rural territorial areas: the case of the Liborina-Sabanalarga zone, Antioquia, Colombia. <em>Borradores Departamento de Economía</em>, (63), 1-87. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/7360">Enlace</a>
+            </div>
+            
+            <!-- CARTILLAS -->
+            <h3 class="es">Cartillas</h3>
+            <h3 class="en hidden">Booklets / Guides</h3>
+            
+            <div class="pub-item">
+                Isaza Ruiz, M., et al. (2024). Casas de relave. Geopolímeros: soluciones sostenibles para la gestión de relaves en la industria minera. Editorial UdeA. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/43727">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona-Trujillo, Harold</strong>; et al. (2021). La ciencia ciudadana, el bienestar y la salud: el caso de las VIP y VIS en la comuna 7 Robledo. ISBN 978-628-7519-22-0. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/24564">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Ospina-Mesa, César Andrés; <strong>Cardona-Trujillo, Harold</strong>; et al. (2021). Rutas para la gestión comunitaria. Fortalecimiento del liderazgo comunitario. ISBN 978-958-5157-80-4. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/21550">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona T, H</strong>; y Toro A, P. (2015). Guía para una minería más limpia del carbón en la cuenca del Sinifaná, Antioquia. ISBN 978-958-8890-60-9.
+            </div>
+            
+            <div class="pub-item">
+                <strong>Cardona T, H</strong>; Lotero C, J; Galeano M, P; Ríos G, Paul (2011). Modulo Nº 2 Desarrollo Local con Enfoque de Género. ISBN 978-958-8709-21-5.
+            </div>
+            
+            <div class="pub-item">
+                J.C. Camargo, <strong>H. Cardona</strong> y J. Gaviria (2007). Sistemas Silvopastoriles con Árboles Maderables dentro de pasturas. ISBN: 978-958-8272-45-0.
+            </div>
+            
+            <div class="pub-item">
+                Camargo J, C; et al. (2004). Valorando nuestros recursos locales. ISBN: 958-9242-10-3.
+            </div>
+            
+            <!-- OTRAS PUBLICACIONES -->
+            <h3 class="es">Otras Publicaciones</h3>
+            <h3 class="en hidden">Other Publications</h3>
+            
+            <div class="pub-item">
+                El paro camionero reveló la fragilidad del abastecimiento alimentario en Colombia. <em>La Silla Vacía</em>. 18/09/2024. <a href="https://www.lasillavacia.com/red-de-expertos/red-social/el-paro-camionero-revelo-la-fragilidad-del-abastecimiento-alimentario-en-colombia/">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                La inseguridad alimentaria en Colombia. <em>La Silla Vacía</em>. 06/09/2024. <a href="https://www.lasillavacia.com/red-de-expertos/red-social/la-inseguridad-alimentaria-en-colombia/">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Colombia requiere más que un líder. <em>Periódico Agenda Pública</em>. 18/06/2018. <a href="https://agendapublica.elpais.com/noticia/14849/colombia-requiere-mas-lider">Enlace</a>
+            </div>
+            
+            <div class="pub-item">
+                Diagnóstico del agro en Antioquia. <em>Periódico El Colombiano</em>. 20/10/2015.
+            </div>
+            
+            <div class="pub-item">
+                El agro: pobreza entre la riqueza. <em>Periódico El Colombiano</em>. 07/02/2013.
+            </div>
+            
+            <div class="pub-item">
+                Diversifican la producción de leche del Norte. <em>Periódico El Colombiano</em>. 25/05/2011.
+            </div>
+        </section>
+
+        <!-- ==================== PONENCIAS / CONFERENCES ==================== -->
+        <section id="conferences">
+            <h2 class="es">Ponencias en Eventos</h2>
+            <h2 class="en hidden">Conference Presentations</h2>
+            
+            <h3 class="es">Internacionales</h3>
+            <h3 class="en hidden">International</h3>
+            
+            <div class="small-entry">
+                <span class="entry-date">2019</span> Implicaciones de la dotación de factores de producción en las Inequidades espaciales: caso Colombia. XVII Encuentro de Geógrafos de América Latina. PUCE, Quito, Ecuador. <a href="https://repositorio.puce.edu.ec/handle/123456789/1117">Enlace</a>
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2018</span> Estrategias de desarrollo económico territorial: caso Colombia. XI Coloquio Nacional de Desarrollo Local. Universidad de la Rioja, España.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2018</span> Análisis estratégico de Desarrollo Económico Local de la Región del Urabá Antioqueño. XLIV Reunión de Estudios Regionales. Universidad de Valencia, España.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2017</span> Propuesta de desarrollo económico local: caso región del Urabá Antiqueño. IV Congreso Internacional de Desarrollo Local. UNMSM, Lima, Perú.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2012</span> Recursos económicos y sistemas productivos territoriales para el desarrollo de Antioquia. Seminario Internacional «Agronegocios y Agroecología para el desarrollo». UdeA. Medellín.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2007</span> Valoración de los Bienes y servicios ambientales como aporte a la sostenibilidad de los ecosistemas. Curso Internacional de Agroecología. UdeA. Medellín.
+            </div>
+            
+            <div class="small-entry">
+                <span class="entry-date">2003</span> Estrategias de manejo para promover la regeneración natural de árboles maderables en sistemas silvopastoriles. VI Seminario internacional del medio ambiente y desarrollo sostenible. UIS, Bogotá.
+            </div>
+            
+            <h3 class="es">Nacionales</h3>
+            <h3 class="en hidden">National</h3>
+            
+            <div class="small-entry">
+                <span class="entry-date">2011</span> Sistemas productivos territoriales para el desarrollo de Antioquia. En: Impactos y realidades de la Administración. SIU, Universidad de Antioquia. Medellín.
+            </div>
+        </section>
+
+        <!-- ==================== DIRECCIÓN TESIS / SUPERVISION ==================== -->
+        <section id="supervision">
+            <h2 class="es">Dirección de Trabajos de Grado y Tesis</h2>
+            <h2 class="en hidden">Thesis Supervision</h2>
+            
+            <h3>Post-Doctorado</h3>
+            <div class="small-entry">
+                <span class="entry-date">2023</span> <strong>Codirector:</strong> Marllory Isaza Ruiz. Aprovechamiento del relave minero de Antioquia para soluciones de vivienda. Convocatoria 935 Programa Orquídeas, Minciencias. CIDEMAT-INER, UdeA.
+            </div>
+            
+            <h3>Doctorado / PhD</h3>
+            <div class="small-entry">
+                <span class="entry-date">2023</span> <strong>Director:</strong> Alejandra Vidal Ramírez. Emprendedores que hacen negocios para el florecimiento de la vida: Un estudio de emprendimiento sostenible en el suroeste antioqueño. Doctorado en Ciencias Sociales, UdeA.
+            </div>
+            
+            <h3 class="es">Maestría</h3>
+            <h3 class="en hidden">Master's</h3>
+            
+            <div class="small-entry"><span class="entry-date">2023</span> Wendi Paola Mosquera Arboleda. Capacidades territoriales y articulación entre actores en la formulación del distrito medellinnovation. Maestría en Estudios Socioespaciales, INER, UdeA. <a href="https://hdl.handle.net/10495/44621">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2022</span> Boris Nicolás Guarín Muñoz. Evaluación del sistema de cosecha asistida en la producción de café en Antioquia. Maestría en Agronegocios, UdeA. <a href="https://bibliotecadigital.udea.edu.co/dspace/handle/10495/32440">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2021</span> Ana Milena Montoya Ríos. El rol de las IES en el camino hacia el desarrollo sostenible: El caso del G8+1 en Medellín. Maestría en Sostenibilidad, UPB.</div>
+            
+            <div class="small-entry"><span class="entry-date">2018</span> Aura Cristina Restrepo Botero. Barreras del emprendimiento rural desde una perspectiva de género en el Oriente de Antioquia. Maestría en Agronegocios, UdeA. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/16703">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2018</span> Andrés Escobar Moreno y Mateo Álvarez Restrepo. El emprendimiento rural desde una perspectiva institucional. Caso: Oriente de Antioquia. Maestría en Administración, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2018</span> Clara María Londoño Velásquez. Comparativo de indicadores de desarrollo sostenible en sistemas de producción de lechería. Maestría en Agronegocios, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2017</span> Fabio Andrés Jiménez Posada. Factores determinantes de las estrategias de coordinación vertical en la porcicultura de Antioquia. Maestría en Administración, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2017</span> Ana Lucia Rodríguez. El comercio justo y la competitividad del oro en Colombia. Maestría en Administración, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2017</span> Miledys López Vides. Cadena productiva del turismo en Santa Fe de Antioquia, Olaya y Liborina. Maestría en Administración, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2016</span> Diego Humberto Sierra Restrepo. Benchmarking para mejora en procesos de Admisiones & Registro Académico de la UdeA. Maestría en Administración, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2015</span> Javier Eduardo Cataño Padilla. Análisis de gestión de riesgo en compra de Carbón, Gas Natural y Petcoke: el caso de tres cementeras en Suramérica. Maestría en Administración, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2015</span> Leidy Tatiana Franco Henao. Consultoría a la Unidad de Contraloría para gestión del área comercial en Smurfit Kappa Medellín. Maestría en Administración, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2013</span> Robinson Garcés Marín. Determinantes de la reforestación comercial en los municipios de Antioquia. Maestría en Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2012</span> Joully Janeth García González. El Índice De Progreso Genuino –IPG- Para La Ciudad De Medellín. Maestría en Medio Ambiente y Desarrollo, UNAL Medellín. <a href="http://www.bdigital.unal.edu.co/9666/1/1128394564.2013.pdf">Enlace</a></div>
+            
+            <h3 class="es">Especialización</h3>
+            <h3 class="en hidden">Specialization</h3>
+            
+            <div class="small-entry"><span class="entry-date">2016</span> María Cristina Henao López, Jazmín Elena Guerra Muñoz y Ericka Milena Aguirre Mejía. RSE en proyectos Hidroeléctricos: Caso Hidroeléctrica Ituango. Esp. Gestión de la Responsabilidad Empresarial, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2015</span> Elizabeth Flórez Martínez et al. RSE en las empresas afiliadas a CAMACOL Antioquia. Esp. Gestión de la Responsabilidad Empresarial, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2014</span> Diana Marcela Quintero Gómez y Luis David Vélez Uribe. Análisis de vocación económica del Municipio de San Andrés de Cuerquia. Esp. Evaluación Socioeconómica de Proyectos, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2014</span> Nazly López Peña. Análisis Costo-Efectividad del proyecto de cadena de caucho natural en Antioquia. Esp. Evaluación Socioeconómica de Proyectos, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2013</span> Ana María Gaviria y Simón Andrei Cerón Mesa. Evaluación Ex-Post de un proyecto de Acueducto en La Estrella, Antioquia. Esp. Evaluación Socioeconómica de Proyectos, UdeA.</div>
+            
+            <h3>Pregrado / Undergraduate</h3>
+            
+            <div class="small-entry"><span class="entry-date">2023</span> Paula Andrea Jaramillo Giraldo. Análisis de Políticas de Desarrollo Territorial: El caso de Rionegro. Pregrado Desarrollo Territorial, UdeA. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/34612">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2022</span> María Camila López Gómez. Análisis de transformaciones socioeconómicas luego de la delimitación del complejo de páramos de Sonsón. Pregrado Desarrollo Territorial, UdeA. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/30876">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2021</span> Edith Johana Marín Ramírez y Leidy Laura Gutiérrez Martínez. Aporte de la mujer campesina de Marinilla al cumplimiento de los ODS. Pregrado Desarrollo Territorial, UdeA. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/29163">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2020</span> Yiban Alejandro Flórez López. Jóvenes y ruralidad: estrategias de acción en el municipio de la Ceja. Pregrado Desarrollo Territorial, UdeA. <a href="https://bibliotecadigital.udea.edu.co/handle/10495/19959">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2018</span> Estefany Peña Rojas. Análisis de redes sociales para la gobernanza del agua: caso Cuenca Rio Grande. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2017</span> Maira Lizeth Calvo Arroyave y Ofir Jazmín García Pabón. Métodos para valorar el impacto de una obra futura: Caso tren de cercanías. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2017</span> Vileydy Adriana González et al. Impactos económicos de la variabilidad climática sobre la producción agrícola: caso Antioquia. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2017</span> Valentina Illera y Mayra Mena. Soluciones a la contaminación atmosférica emitida por fuentes móviles. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2017</span> Dévora Salas Montoya y Andrés Felipe Silva Céspedes. Políticas Agrícolas, de subsidios y ayudas internas a la producción del café. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2016</span> Jaffet Ramírez Rodríguez. Estado del arte de métodos de optimización para su aplicación en una cuenca hidrográfica. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2016</span> Tatiana María Colorado Marín et al. Recursos y capacidades para el desarrollo económico local en Buriticá. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2015</span> Alejandra Restrepo Areiza y Julián Duque Cano. Propuesta de desarrollo económico local para la región del Urabá Antioqueño. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2014</span> José Guillermo Castro Zabala et al. Caracterización y valoración de la oferta de educación superior en la región del Urabá antioqueño. Pregrado Economía, UdeA.</div>
+            
+            <div class="small-entry"><span class="entry-date">2013</span> Diana Marcela Restrepo Martínez. El acceso a la tierra como condicionante del desarrollo económico la cuenca carbonífera del Sinifaná. Facultad de Economía, UPB. <a href="http://hdl.handle.net/20.500.11912/3278">Enlace</a></div>
+            
+            <div class="small-entry"><span class="entry-date">2011</span> Juan José Villegas Restrepo. Desarrollo local desde la perspectiva de sistemas productivos territoriales y ambientales en la cuenca del río Sinifaná. Facultad de Economía, UPB.</div>
+        </section>
+
+        <!-- ==================== BECAS / AWARDS ==================== -->
+        <section id="awards">
+            <h2 class="es">Becas y Reconocimientos</h2>
+            <h2 class="en hidden">Grants and Awards</h2>
+            
+            <div class="entry">
+                <span class="entry-date">2019</span>
+                <div class="entry-desc">Programa Enlaza Mundos, convocatoria 2019-2. Sapiencia.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2013</span>
+                <div class="entry-desc es">Beca parcial para realizar Viajes de Estudios y Prácticas de Estudios en Alemania con un grupo de 15 estudiantes de pregrado, otorgada por el Servicio Alemán de Intercambio Académico (DAAD). Entre el 18 de mayo y el 5 de junio del 2013. Project ID: 57041952.</div>
+                <div class="entry-desc en hidden">Partial grant for Study and Internship Trips in Germany with a group of 15 undergraduate students, awarded by the German Academic Exchange Service (DAAD). May 18 to June 5, 2013. Project ID: 57041952.</div>
+            </div>
+            
+            <div class="entry">
+                <span class="entry-date">2010</span>
+                <div class="entry-desc es">Beca para realizar Viajes de Estudios y Prácticas de Estudios en Alemania con un grupo de 15 estudiantes de pregrado, otorgada por el Servicio Alemán de Intercambio Académico (DAAD). Entre el 27 de noviembre y el 8 de diciembre del 2010. Project ID: 50747921.</div>
+                <div class="entry-desc en hidden">Grant for Study and Internship Trips in Germany with a group of 15 undergraduate students, awarded by the German Academic Exchange Service (DAAD). November 27 to December 8, 2010. Project ID: 50747921.</div>
+            </div>
+        </section>
+
+        <!-- ==================== COMPETENCIAS / SKILLS ==================== -->
+        <section id="skills">
+            <h2 class="es">Competencias</h2>
+            <h2 class="en hidden">Skills & Competencies</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <strong class="es">Idiomas</strong>
+                    <strong class="en hidden">Languages</strong>
+                    <p class="es">Español (Nativo)<br>Inglés (Bueno - TOEFL C1)</p>
+                    <p class="en hidden">Spanish (Native)<br>English (Good - TOEFL C1)</p>
+                </div>
+                
+                <div class="skill-item">
+                    <strong>Software</strong>
+                    <p>MS Office, SPSS, Atlas.ti, UCINET 6, ArcGIS, MOODLE, LaTeX</p>
+                </div>
+                
+                <div class="skill-item">
+                    <strong class="es">Áreas de Investigación</strong>
+                    <strong class="en hidden">Research Areas</strong>
+                    <p class="es">Desarrollo rural y territorial, Análisis institucional, Economía regional, Competitividad, Vivienda de interés social, Género, Minería y medio ambiente</p>
+                    <p class="en hidden">Rural and territorial development, Institutional analysis, Regional economics, Competitiveness, Social housing, Gender, Mining and environment</p>
+                </div>
+                
+                <div class="skill-item">
+                    <strong class="es">Metodologías</strong>
+                    <strong class="en hidden">Methodologies</strong>
+                    <p class="es">Análisis de ciclo de vida, Análisis multicriterio (AHP), Análisis de redes sociales, Sistemas de Información Geográfica</p>
+                    <p class="en hidden">Life cycle analysis, Multicriteria analysis (AHP), Social network analysis, Geographic Information Systems</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p class="es">Para todos los efectos legales, certifico que los datos consignados en la presente hoja de vida son ciertos, y autorizo su verificación.</p>
+        <p class="en hidden">For all legal purposes, I certify that the data contained in this CV is true, and I authorize its verification.</p>
+        <br>
+        <p><strong>Harold Cardona Trujillo</strong></p>
+        <p>C.C. 10.004.446 de Pereira</p>
+        <br>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+            <a href="https://www.eafit.edu.co/escuelas/economiayfinanzas/valorpublico/Paginas/lineaterritorios.aspx" style="color: var(--accent);">EAFIT - Centro de Valor Público</a> |
+            <a href="https://scholar.google.com/" style="color: var(--accent);">Google Scholar</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;"><span class="es">Actualizado</span><span class="en hidden">Updated</span> 2025</p>
+    </footer>
+
+    <script>
+        function toggleLang() {
+            document.querySelectorAll('.es').forEach(el => el.classList.toggle('hidden'));
+            document.querySelectorAll('.en').forEach(el => el.classList.toggle('hidden'));
+        }
+    </script>
+</body>
+</html>
